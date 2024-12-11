@@ -5,6 +5,14 @@ vim.o.wildoptions = 'fuzzy,pum,tagfile'
 -- Adjust for 'textDocument/diagnostic'
 vim.o.signcolumn = 'yes:1'
 
+-- Global LSP configuration
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})
+
+-- Enable LSP servers
+vim.lsp.enable({ 'lua_ls' })
+
 -- Enable 'textDocument/inlayHint'
 vim.lsp.inlay_hint.enable(true)
 
